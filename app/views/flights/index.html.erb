@@ -1,0 +1,10 @@
+<h1>Search flight</h1>
+<%= form_tag(root_path, method: 'get') do %>
+  <%= label_tag(:from, 'From:') %>
+  <%= select_tag(:from, options_for_select(@airports)) %>
+  <%= label_tag(:to, 'To:') %>
+  <%= select_tag(:to, options_for_select(@airports)) %>
+  <%= label_tag(:date, 'Date:') %>
+  <%= select_tag(:date, options_for_select(@dates)) %>
+  <%= submit_tag('Search') %>
+<% end %>
