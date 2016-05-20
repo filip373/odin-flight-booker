@@ -15,5 +15,9 @@ Flight.create!(start_date: 2.weeks.since, duration: 425.minutes,
   from_airport: nyc, to_airport: sfo)
 Flight.create!(start_date: 4.weeks.since, duration: 60.minutes,
   from_airport: ldz, to_airport: waw)
+Flight.create!(start_date: 4.weeks.since + 20.minutes, duration: 80.minutes,
+  from_airport: ldz, to_airport: waw)
 Flight.create!(start_date: 1.week.since, duration: 600.minutes,
   from_airport: sfo, to_airport: ldz)
+Flight.create!(start_date: 1.week.since + 2.minutes, duration: 70.minutes,
+  from_airport: waw, to_airport: ldz)

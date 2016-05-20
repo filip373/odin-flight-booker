@@ -1,0 +1,19 @@
+<h1>Results</h1>
+<%= form_for(bookings_new_url, method: :get) do %>
+  <%= hidden_field_tag(:pass_number, pass_number) %>
+  <% @results.each do |flight| %>
+    <div>
+      <div class="flight">
+        <div>From: <%= flight.from_airport.code %></div>
+        <div>To: <%= flight.to_airport.code %></div>
+        <div>Date: <%= flight.start_date %></div>
+        <div>Duration: <%= Time.at(flight.duration).utc.strftime("%Hh%Mm") %></div>
+        <div class="flight-select">
+          <%= label_tag(:flight, 'Select') %>
+          <%= radio_button_tag(:flight, flight.id) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= submit_tag('Book') %>
+<% end %>

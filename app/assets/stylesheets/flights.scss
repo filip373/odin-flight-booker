@@ -5,3 +5,17 @@ select, input {
   display: block;
   margin-bottom: 10px;
 }
+
+input[type='submit'] {
+  margin-top: 10px;
+}
+
+.flight {
+  display: inline-block;
+  border: solid 1px blue;
+  margin: 10px;
+}
+
+.flight-select input {
+  display: inline;
+}

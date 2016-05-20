@@ -5,4 +5,5 @@ class Flight < ActiveRecord::Base
   def date_wo_time
     start_date.strftime('%d.%m.%Y')
   end
+
 end
