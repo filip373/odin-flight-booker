@@ -1,0 +1,4 @@
+<div>From: <%= flight.from_airport.code %></div>
+<div>To: <%= flight.to_airport.code %></div>
+<div>Date: <%= flight.start_date %></div>
+<div>Duration: <%= Time.at(flight.duration).utc.strftime("%Hh%Mm") %></div>

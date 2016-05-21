@@ -1,15 +1,15 @@
-<%= form_tag(root_path, method: :get) do %>
-  <%= label_tag(:from, 'From:') %>
-  <%= select_tag(:from, options_for_select(@airports)) %>
+<%= form_for(:search, url: root_path, method: :get) do |f| %>
+  <%= f.label(:from, 'From:') %>
+  <%= f.select(:from, options_for_select(@airports)) %>
 
-  <%= label_tag(:to, 'To:') %>
-  <%= select_tag(:to, options_for_select(@airports)) %>
+  <%= f.label(:to, 'To:') %>
+  <%= f.select(:to, options_for_select(@airports)) %>
 
-  <%= label_tag(:date, 'Date:') %>
-  <%= select_tag(:date, options_for_select(@dates)) %>
+  <%= f.label(:date, 'Date:') %>
+  <%= f.select(:date, options_for_select(@dates)) %>
 
-  <%= label_tag(:pass_number, 'Number of passengers:') %>
-  <%= select_tag(:pass_number, options_for_select(@passengers)) %>
+  <%= f.label(:pass_number, 'Number of passengers:') %>
+  <%= f.select(:pass_number, options_for_select(@passengers)) %>
 
-  <%= submit_tag('Search') %>
+  <%= f.submit('Search') %>
 <% end %>

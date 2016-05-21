@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519104525) do
+ActiveRecord::Schema.define(version: 20160520135211) do
 
   create_table "airports", force: :cascade do |t|
     t.string   "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "booking_passengers", force: :cascade do |t|
+    t.integer  "passenger_id"
+    t.integer  "booking_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "booking_passengers", ["booking_id"], name: "index_booking_passengers_on_booking_id"
+  add_index "booking_passengers", ["passenger_id"], name: "index_booking_passengers_on_passenger_id"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "flight_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "bookings", ["flight_id"], name: "index_bookings_on_flight_id"
 
   create_table "flights", force: :cascade do |t|
     t.datetime "start_date"
@@ -30,5 +48,12 @@ ActiveRecord::Schema.define(version: 20160519104525) do
 
   add_index "flights", ["finish_airport_id"], name: "index_flights_on_finish_airport_id"
   add_index "flights", ["start_airport_id"], name: "index_flights_on_start_airport_id"
+
+  create_table "passengers", force: :cascade do |t|
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

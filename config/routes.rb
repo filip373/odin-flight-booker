@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'bookings/new'
+  resources(:bookings, only: [:show, :new, :create])
 
   root 'flights#index'
   # The priority is based upon order of creation: first created -> highest priority.
