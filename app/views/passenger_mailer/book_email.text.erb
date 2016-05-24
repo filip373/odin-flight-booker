@@ -1,0 +1,4 @@
+Hello, <%= @passenger.name %>
+You have successfully booked a flight:
+<%= render(partial: 'flights/flight.text', locals: {flight: @flight}) %>
+Thank you
